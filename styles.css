@@ -374,7 +374,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .main-nav {
     position: fixed; inset: var(--header-h) 0 auto 0;
     margin: 0; padding: 12px var(--gutter) 20px;
-    background: rgba(11, 17, 28, 0.97);
+    background: var(--ink);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
     border-bottom: 1px solid var(--line);
     transform: translateY(-8px); opacity: 0; visibility: hidden;
     transition: opacity 0.2s, transform 0.25s var(--ease), visibility 0.2s;
