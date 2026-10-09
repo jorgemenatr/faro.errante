@@ -25,7 +25,7 @@ document.addEventListener('click', (e) => {
 });
 
 // Aparición suave de tarjetas y bloques al hacer scroll
-const revealables = document.querySelectorAll('.card, .steps-panel, .campaign, .section-head');
+const revealables = document.querySelectorAll('.card, .steps-panel, .wm-intro, .wm-point, .section-head');
 if ('IntersectionObserver' in window) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

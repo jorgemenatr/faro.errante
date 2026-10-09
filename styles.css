@@ -219,7 +219,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .section:last-of-type { padding-bottom: clamp(56px, 8vw, 104px); }
 
 .section-head { margin-bottom: 32px; }
-.section-head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 .kicker {
   font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
   color: var(--amber); margin-bottom: 8px;
@@ -230,12 +229,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   line-height: 1.1; letter-spacing: -0.01em;
 }
 
-.link-more {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 0.9rem; font-weight: 500; color: var(--amber);
-}
-.link-more .ico { width: 16px; height: 16px; transition: transform 0.2s var(--ease); }
-.link-more:hover .ico { transform: translateX(3px); }
 
 /* ---------- Tarjetas ---------- */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -251,7 +244,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .card:hover { border-color: rgba(227, 167, 78, 0.5); transform: translateY(-3px); }
 
 /* Imagen con respaldo de curvas de nivel */
-.card-media, .campaign-media {
+.card-media {
   position: relative; overflow: hidden;
   background:
     repeating-radial-gradient(circle at 30% 120%, transparent 0 14px, rgba(163, 173, 187, 0.07) 14px 15px),
@@ -259,11 +252,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     var(--ink-3);
 }
 .card-media { aspect-ratio: 3 / 2; }
-.card-media img, .campaign-media img {
+.card-media img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.6s var(--ease);
 }
-.card:hover .card-media img, .campaign-link:hover img { transform: scale(1.04); }
+.card:hover .card-media img { transform: scale(1.04); }
 
 .card-body { position: relative; flex: 1; padding: 18px 20px 44px; }
 .card h3 {
@@ -317,44 +310,25 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .step h3 { margin-top: 4px; font-family: var(--font-display); font-size: 1.3rem; }
 .step p { margin-top: 6px; font-size: 0.92rem; color: var(--fog); max-width: 26ch; }
 
-/* ---------- Campañas ---------- */
-.campaigns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-
-.campaign {
-  display: flex; flex-direction: column;
-  border: 1px solid var(--line); border-radius: var(--radius);
-  background: var(--ink-2); overflow: hidden;
-  transition: border-color 0.25s;
+/* ---------- ¿Qué es un West Marches? ---------- */
+.wm {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 72px);
+  align-items: start;
 }
-.campaign:hover { border-color: rgba(227, 167, 78, 0.5); }
-
-.campaign-link { position: relative; display: block; }
-.campaign-media { aspect-ratio: 3 / 2; }
-.campaign-overlay {
-  position: absolute; inset: auto 0 0 0;
-  padding: 48px 20px 18px;
-  background: linear-gradient(0deg, rgba(11, 17, 28, 0.95) 10%, rgba(11, 17, 28, 0));
+.wm-intro h2 { text-wrap: balance; }
+.wm-lead { margin-top: 16px; font-size: 1.1rem; line-height: 1.65; color: var(--paper); max-width: 46ch; }
+.wm-note {
+  margin-top: 20px; padding-left: 14px; border-left: 2px solid var(--amber);
+  font-family: var(--font-display); font-style: italic; font-size: 1.05rem; color: var(--fog);
 }
-.campaign-overlay h3 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.15; }
-.campaign-overlay p { margin-top: 2px; font-family: var(--font-display); font-style: italic; color: var(--fog); }
-
-.chip {
-  position: absolute; top: 14px; left: 14px;
-  padding: 3px 10px; border-radius: 999px;
-  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--amber); background: rgba(11, 17, 28, 0.7); border: 1px solid rgba(227, 167, 78, 0.4);
-  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+.wm-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 36px; padding-top: 6px; }
+.wm-point h3 { margin-top: 14px; font-family: var(--font-display); font-size: 1.25rem; line-height: 1.2; }
+.wm-point p { margin-top: 6px; font-size: 0.92rem; color: var(--fog); }
+.wm-icon {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 12px;
+  background: var(--amber-soft); color: var(--amber);
 }
-
-.campaign-meta {
-  display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-  padding: 14px 20px;
-  border-top: 1px solid var(--line);
-  font-size: 0.85rem; color: var(--fog);
-}
-.campaign-meta li { display: inline-flex; align-items: center; gap: 6px; }
-.campaign-meta li:last-child { margin-left: auto; color: var(--amber); }
-.campaign-meta .ico { width: 16px; height: 16px; }
+.wm-icon .ico { width: 22px; height: 22px; }
 
 /* ---------- Pie ---------- */
 .site-footer { border-top: 1px solid var(--line); background: rgba(8, 12, 20, 0.7); }
@@ -413,7 +387,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .cards { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
   .steps::before { display: none; }
-  .campaigns { grid-template-columns: repeat(2, 1fr); }
+  .wm { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 720px) {
@@ -436,7 +410,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .step-icon { position: absolute; left: 0; top: 0; }
   .step-num { margin-top: 0; }
 
-  .campaigns { grid-template-columns: 1fr; }
+  .wm-points { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .footer-nav { gap: 8px 20px; }
