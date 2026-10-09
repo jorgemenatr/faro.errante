@@ -1,6 +1,6 @@
 // Mesas de la semana.
 // Para agregar una mesa, copia un bloque y cambia los datos.
-// `imagen` es opcional: si no hay imagen o no carga, la tarjeta se muestra sin foto.
+// `imagen` es obligatoria: toda mesa debe llevar foto.
 // `credito` es el autor y la licencia de la foto, cuando la licencia lo pide.
 const MESAS = [
   {
@@ -60,6 +60,8 @@ const MESAS = [
     dm: 'Sofía Treviño',
     ubicacion: 'En línea · Discord del gremio',
     nivel: 'T3',
+    imagen: 'assets/img/mesas/biblioteca.jpg',
+    credito: 'Foto: Nicole Hill · CC BY-SA 4.0',
   },
   {
     fecha: '2026-10-15',
@@ -154,23 +156,18 @@ function tarjeta(m) {
   cuerpo.append(etiquetas, el('h2', 'mesa-titulo', m.titulo), el('p', 'mesa-desc', m.descripcion), datos);
   card.append(talon, cuerpo);
 
-  // Imagen opcional: si falla, la tarjeta queda en su versión sin foto
-  if (m.imagen) {
-    const fig = el('figure', 'mesa-media');
-    const img = new Image();
-    img.alt = '';
-    img.loading = 'lazy';
-    img.decoding = 'async';
-    img.addEventListener('error', () => {
-      fig.remove();
-      card.classList.remove('con-foto');
-    });
-    img.src = m.imagen;
-    fig.append(img);
-    if (m.credito) fig.append(el('figcaption', 'mesa-credito', m.credito));
-    card.classList.add('con-foto');
-    card.append(fig);
-  }
+  // Foto (obligatoria)
+  if (!m.imagen) console.warn(`La mesa "${m.titulo}" no tiene imagen.`);
+  const fig = el('figure', 'mesa-media');
+  const img = new Image();
+  img.alt = '';
+  img.loading = 'lazy';
+  img.decoding = 'async';
+  img.addEventListener('error', () => console.warn(`No se pudo cargar la imagen de "${m.titulo}": ${m.imagen}`));
+  img.src = m.imagen;
+  fig.append(img);
+  if (m.credito) fig.append(el('figcaption', 'mesa-credito', m.credito));
+  card.append(fig);
 
   return card;
 }

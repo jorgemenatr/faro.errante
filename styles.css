@@ -190,13 +190,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero-inner > * { max-width: 560px; }
 
 .eyebrow {
-  display: flex; align-items: center; gap: 14px;
   font-family: var(--font-display); font-style: italic; font-size: 1.25rem; color: var(--fog);
   margin-bottom: 12px;
-}
-.eyebrow .coords {
-  font-style: normal; color: var(--amber);
-  padding: 3px 10px; border: 1px solid rgba(227, 167, 78, 0.4); border-radius: 999px;
 }
 
 .hero h1 {
@@ -244,7 +239,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Tarjetas ---------- */
 .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-.cards + .cards { margin-top: 20px; }
 
 .card {
   position: relative;
@@ -265,7 +259,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     var(--ink-3);
 }
 .card-media { aspect-ratio: 3 / 2; }
-.card-compact .card-media { aspect-ratio: 16 / 7; }
 .card-media img, .campaign-media img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.6s var(--ease);
@@ -434,19 +427,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .hero-inner { padding-block: 220px 48px; }
   .hero-actions .btn { flex: 1 1 auto; }
 
-  .cards-main { grid-template-columns: 1fr; }
-  .cards-secondary { grid-template-columns: 1fr; gap: 12px; }
-  .cards-secondary + .cards, .cards-main + .cards-secondary { margin-top: 12px; }
-  .cards-main { gap: 16px; }
-  .cards-main .card-media { aspect-ratio: 16 / 9; }
-
-  /* Tarjetas secundarias como filas en el cel */
-  .card-compact { flex-direction: row; }
-  .card-compact .card-media { aspect-ratio: auto; width: 96px; flex: none; }
-  .card-compact .card-body { padding: 14px 44px 14px 16px; }
-  .card-compact .card-arrow { top: 50%; bottom: auto; margin-top: -9px; }
-  .card-compact h3 { font-size: 1.1rem; }
-  .card-compact p { margin-top: 4px; font-size: 0.85rem; }
+  .cards { grid-template-columns: 1fr; gap: 16px; }
+  .card-media { aspect-ratio: 16 / 9; }
 
   .steps { grid-template-columns: 1fr; row-gap: 28px; }
   .steps::before { display: block; left: 27px; right: auto; top: 28px; bottom: 28px; border-top: 0; border-left: 1.5px dashed rgba(227, 167, 78, 0.35); }
@@ -463,7 +445,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* ==========================================================
    Página de mesas
    Cada mesa es un "boleto": talón con fecha y hora a la
-   izquierda, contenido al centro y foto opcional a la derecha.
+   izquierda, contenido al centro y foto a la derecha.
    ========================================================== */
 :root {
   --tier-1: #8fbcb3;
@@ -507,13 +489,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .mesa {
   display: grid;
-  grid-template-columns: 112px minmax(0, 1fr);
+  grid-template-columns: 112px minmax(0, 1fr) minmax(220px, 34%);
   border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--ink-2);
   overflow: hidden;
   transition: border-color 0.25s;
 }
-.mesa.con-foto { grid-template-columns: 112px minmax(0, 1fr) minmax(220px, 34%); }
 .mesa:hover { border-color: rgba(227, 167, 78, 0.4); }
 
 /* Talón */
@@ -570,7 +551,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .mesa-dato dt { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--fog-dim); }
 .mesa-dato dd { margin: 0; font-size: 0.95rem; color: var(--paper); }
 
-/* Foto opcional */
+/* Foto */
 .mesa-media { margin: 0; position: relative; min-height: 100%; background: var(--ink-3); }
 .mesa-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .mesa-credito {
@@ -582,7 +563,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 720px) {
-  .mesa, .mesa.con-foto { grid-template-columns: minmax(0, 1fr); }
+  .mesa { grid-template-columns: minmax(0, 1fr); }
   .mesa-media { order: -1; aspect-ratio: 16 / 9; min-height: 0; }
   .mesa-talon { justify-content: flex-start; padding: 12px 18px; border-right: 0; border-bottom: 1.5px dashed var(--line-strong); }
   .mesa-talon time { flex-direction: row; align-items: baseline; gap: 8px; }
