@@ -1,3 +1,19 @@
+// Redes sociales del gremio. Cambia aquí los enlaces y se actualizan en todo el sitio.
+const REDES = {
+  instagram: '',
+  facebook: '',
+  discord: '',
+};
+
+document.querySelectorAll('[data-social]').forEach((a) => {
+  const url = REDES[a.dataset.social];
+  if (url) {
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+  }
+});
+
 // Menú en pantallas chicas
 const header = document.querySelector('[data-header]');
 const toggle = document.querySelector('[data-nav-toggle]');

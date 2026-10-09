@@ -574,3 +574,142 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .mesa-cuerpo { padding: 18px 18px 20px; }
   .mesa-datos { flex-direction: column; gap: 12px; }
 }
+
+/* ==========================================================
+   Página del gremio
+   ========================================================== */
+.page-lead { margin-top: 14px; max-width: 60ch; font-size: 1.1rem; color: var(--fog); }
+.gremio-page { padding-bottom: clamp(56px, 8vw, 104px); }
+.gremio-section { padding-top: clamp(40px, 6vw, 72px); }
+.gremio-section .section-head { margin-bottom: 24px; }
+
+/* Galería */
+.galeria {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: clamp(150px, 17vw, 220px); gap: 12px;
+}
+.galeria-item:first-child { grid-column: span 2; grid-row: span 2; }
+.galeria-item:nth-child(5), .galeria-item:nth-child(6) { grid-column: span 2; }
+.galeria-btn {
+  position: relative; display: block; width: 100%; height: 100%; padding: 0;
+  border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+  background: var(--ink-3); cursor: zoom-in; color: inherit; font: inherit; text-align: left;
+}
+.galeria-btn img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease); }
+.galeria-btn:hover img { transform: scale(1.04); }
+.galeria-pie {
+  position: absolute; inset: auto 0 0 0;
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 36px 16px 14px;
+  background: linear-gradient(0deg, rgba(11, 17, 28, 0.92), rgba(11, 17, 28, 0));
+}
+.galeria-titulo { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.2; color: var(--paper); }
+.galeria-item:first-child .galeria-titulo { font-size: 1.5rem; }
+.galeria-fecha { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--fog); }
+
+/* Visor de fotos */
+.visor {
+  width: min(1100px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
+  padding: 0; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  background: var(--ink); color: var(--paper); overflow: visible;
+}
+.visor::backdrop { background: rgba(5, 8, 14, 0.85); backdrop-filter: blur(4px); }
+.visor-figura { margin: 0; display: flex; flex-direction: column; }
+.visor-figura img {
+  width: 100%; max-height: calc(100vh - 160px); object-fit: contain;
+  background: #05080e; border-radius: var(--radius) var(--radius) 0 0;
+}
+.visor-figura figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; padding: 14px 18px 16px; }
+.visor-figura strong { font-family: var(--font-display); font-weight: 400; font-size: 1.2rem; }
+.visor-figura span { font-size: 0.9rem; color: var(--fog); }
+.visor-figura .visor-credito { margin-left: auto; font-family: var(--font-mono); font-size: 0.7rem; color: var(--fog-dim); }
+.visor-btn {
+  position: absolute; display: grid; place-items: center;
+  width: 44px; height: 44px; border-radius: 999px;
+  border: 1px solid var(--line-strong); background: rgba(11, 17, 28, 0.8); color: var(--paper); cursor: pointer;
+}
+.visor-btn:hover { border-color: var(--amber); color: var(--amber); }
+.visor-cerrar { top: 12px; right: 12px; }
+.visor-prev, .visor-next { top: calc(50% - 50px); }
+.visor-prev { left: 12px; }
+.visor-next { right: 12px; }
+
+/* Redes */
+.redes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.red {
+  position: relative; display: flex; align-items: flex-start; gap: 16px;
+  padding: 22px 48px 22px 22px;
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2);
+  transition: border-color 0.25s, transform 0.3s var(--ease);
+}
+.red:hover { border-color: rgba(227, 167, 78, 0.5); transform: translateY(-2px); }
+.red-icon {
+  display: grid; place-items: center; flex: none; width: 48px; height: 48px; border-radius: 12px;
+  background: var(--amber-soft); color: var(--amber);
+}
+.red-icon .ico { width: 24px; height: 24px; }
+.red-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.red-nombre { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.2; }
+.red-desc { font-size: 0.9rem; color: var(--fog); }
+.red-flecha { position: absolute; right: 20px; top: 26px; width: 18px; height: 18px; color: var(--amber); transition: transform 0.25s var(--ease); }
+.red:hover .red-flecha { transform: translateX(4px); }
+
+/* Dungeon Masters */
+.dms { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.dm {
+  display: flex; flex-direction: column; gap: 14px;
+  padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2);
+}
+.dm-sello {
+  display: grid; place-items: center; width: 56px; height: 56px; border-radius: 999px;
+  border: 1px solid rgba(227, 167, 78, 0.5); background: var(--stub);
+  font-family: var(--font-display); font-size: 1.3rem; color: var(--amber); letter-spacing: 0.02em;
+}
+.dm-nombre { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.2; }
+.dm-juega { margin-top: 4px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--amber); }
+.dm-estilo { margin-top: 8px; font-size: 0.9rem; color: var(--fog); }
+
+/* Código de la mesa */
+.codigo {
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 64px);
+  padding: clamp(28px, 4vw, 48px);
+  border: 1px solid var(--line); border-radius: calc(var(--radius) + 6px);
+  background: radial-gradient(ellipse 60% 80% at 0% 0%, rgba(227, 167, 78, 0.07), transparent 70%), var(--ink-2);
+}
+.codigo-head h2 { text-wrap: balance; }
+.codigo-head > p:last-child { margin-top: 14px; color: var(--fog); max-width: 44ch; }
+.codigo-lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 32px; }
+.codigo-lista li { padding-left: 16px; border-left: 2px solid rgba(227, 167, 78, 0.45); }
+.codigo-lista h3 { font-family: var(--font-display); font-size: 1.15rem; line-height: 1.2; }
+.codigo-lista p { margin-top: 6px; font-size: 0.9rem; color: var(--fog); }
+
+/* Invitación */
+.invitacion {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px 32px; flex-wrap: wrap;
+  padding: clamp(24px, 4vw, 36px) clamp(24px, 4vw, 40px);
+  border: 1px solid rgba(227, 167, 78, 0.35); border-radius: var(--radius); background: var(--amber-soft);
+}
+.invitacion h2 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+.invitacion p { margin-top: 6px; color: var(--fog); }
+
+@media (max-width: 1080px) {
+  .redes { grid-template-columns: minmax(0, 1fr); }
+  .codigo { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 150px; gap: 8px; }
+  .galeria-item:first-child { grid-column: span 2; grid-row: span 2; }
+  .galeria-item:nth-child(5), .galeria-item:nth-child(6) { grid-column: auto; }
+  .galeria-pie { padding: 28px 10px 10px; }
+  .galeria-titulo { font-size: 0.95rem; }
+  .galeria-fecha { display: none; }
+  .galeria-item:first-child .galeria-fecha { display: block; }
+  .codigo-lista { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .dms { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .dm { flex-direction: row; align-items: flex-start; padding: 16px; }
+  .dm-sello { width: 48px; height: 48px; font-size: 1.1rem; flex: none; }
+  .visor-prev, .visor-next { top: auto; bottom: 12px; }
+  .visor-figura figcaption { padding-right: 120px; }
+  .invitacion .btn { width: 100%; }
+}

@@ -34,3 +34,17 @@ Las fotos en `assets/img/mesas/` vienen de Wikimedia Commons. Su licencia pide d
 | `biblioteca.jpg` | [DnD Game 05](https://commons.wikimedia.org/wiki/File:DnD_Game_05.jpg) | Nicole Hill | CC BY-SA 4.0 |
 | `rio.jpg` | [Miniatures by C Jones](https://commons.wikimedia.org/wiki/File:Miniatures_by_C_Jones.jpg) | RightCowLeftCoast | CC BY-SA 4.0 |
 | `niebla.jpg` | [Role playing gamers](https://commons.wikimedia.org/wiki/File:Role_playing_gamers.jpg) | Diacritica | CC BY-SA 3.0 |
+
+### Fotos de la galería del gremio
+
+La galería de `gremio.html` usa las fotos de las mesas y estas tres, también de Wikimedia Commons:
+
+| Archivo | Original | Autor | Licencia |
+|---|---|---|---|
+| `gremio/mapa-y-ficha.jpg` | [DnD Game 01](https://commons.wikimedia.org/wiki/File:DnD_Game_01.jpg) | Nicole Hill | CC BY-SA 4.0 |
+| `gremio/mapa-dibujado.jpg` | [DnD Game 04](https://commons.wikimedia.org/wiki/File:DnD_Game_04.jpg) | Nicole Hill | CC BY-SA 4.0 |
+| `gremio/ropecon.jpg` | [Fantasy tabletop role playing game at RopeCon 2019](https://commons.wikimedia.org/wiki/File:Fantasy_tabletop_role_playing_game_at_RopeCon_2019.jpg) | JIP | CC BY-SA 4.0 |
+
+## Redes sociales
+
+Los enlaces de Instagram, Facebook y Discord se configuran en un solo lugar: el objeto `REDES` al inicio de `script.js`. Se aplican en el pie de página y en la página del gremio.
