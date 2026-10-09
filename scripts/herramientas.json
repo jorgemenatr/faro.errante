@@ -1,0 +1,50 @@
+[
+  {
+    "nombre": "D&D Beyond",
+    "url": "https://www.dndbeyond.com",
+    "categoria": "Personajes y reglas",
+    "nota": "Crea y lleva tu hoja de personaje en línea. Ahí también están las reglas gratuitas."
+  },
+  {
+    "nombre": "Owlbear Rodeo",
+    "url": "https://www.owlbear.rodeo",
+    "categoria": "Mesa virtual",
+    "nota": "La mesa virtual que usamos en las sesiones en línea. No necesita cuenta para jugar."
+  },
+  {
+    "nombre": "Foundry VTT",
+    "url": "https://foundryvtt.com",
+    "categoria": "Mesa virtual",
+    "nota": "Mesa virtual completa para campañas largas. Se paga una sola vez."
+  },
+  {
+    "nombre": "Kobold Plus Fight Club",
+    "url": "https://koboldplus.club",
+    "categoria": "Para DMs",
+    "nota": "Calcula la dificultad de un encuentro según el nivel del grupo."
+  },
+  {
+    "nombre": "Dungeon Scrawl",
+    "url": "https://www.dungeonscrawl.com",
+    "categoria": "Mapas",
+    "nota": "Dibuja mapas de mazmorras en minutos, directo en el navegador."
+  },
+  {
+    "nombre": "Inkarnate",
+    "url": "https://inkarnate.com",
+    "categoria": "Mapas",
+    "nota": "Mapas de regiones y ciudades con estilo de ilustración."
+  },
+  {
+    "nombre": "donjon",
+    "url": "https://donjon.bin.sh",
+    "categoria": "Para DMs",
+    "nota": "Generadores de nombres, tabernas, botín, clima y más."
+  },
+  {
+    "nombre": "Tabletop Audio",
+    "url": "https://tabletopaudio.com",
+    "categoria": "Ambiente",
+    "nota": "Música y sonidos de ambiente gratis para la mesa."
+  }
+]

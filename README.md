@@ -48,3 +48,15 @@ La galería de `gremio.html` usa las fotos de las mesas y estas tres, también d
 ## Redes sociales
 
 Los enlaces de Instagram, Facebook y Discord se configuran en un solo lugar: el objeto `REDES` al inicio de `script.js`. Se aplican en el pie de página y en la página del gremio.
+
+## Recursos
+
+- **Descargables:** los PDF editables están en `assets/recursos/`. Se generan con `python3 scripts/generar_pdfs.py` (requiere `reportlab`). Para cambiar la lista, edita `DESCARGAS` en `recursos.js`.
+- **Libros de D&D:** edita `LIBROS` en `recursos.js`. Solo enlazamos a dónde conseguirlos; no subimos copias en PDF de libros con derechos de autor.
+- **Herramientas del gremio:** agrega o quita sitios en `scripts/herramientas.json` y corre:
+
+  ```
+  node scripts/previews.mjs
+  ```
+
+  El script entra a cada sitio, toma su título, descripción, imagen de vista previa e ícono, y genera `herramientas-data.js`. Si un sitio bloquea la consulta, la tarjeta se muestra solo con la nota del gremio.

@@ -713,3 +713,112 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .visor-figura figcaption { padding-right: 120px; }
   .invitacion .btn { width: 100%; }
 }
+
+/* ==========================================================
+   Página de recursos
+   ========================================================== */
+.recursos-page { padding-bottom: clamp(56px, 8vw, 104px); }
+.section-sub { margin-top: 10px; max-width: 62ch; color: var(--fog); }
+
+.saltos { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px; }
+.saltos a {
+  display: inline-flex; align-items: center; min-height: 38px; padding: 0 16px; border-radius: 999px;
+  border: 1px solid var(--line-strong); font-size: 0.875rem; font-weight: 500; color: var(--fog);
+  transition: color 0.2s, border-color 0.2s;
+}
+.saltos a:hover { color: var(--amber); border-color: rgba(227, 167, 78, 0.55); }
+
+/* Descargables */
+.descargas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.descarga {
+  display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; align-items: start;
+  padding: 22px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2);
+}
+.descarga-mini {
+  aspect-ratio: 680 / 880; max-width: 100%; border-radius: 6px; overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45); transform: rotate(-2deg);
+  transition: transform 0.3s var(--ease);
+}
+.descarga:hover .descarga-mini { transform: rotate(0deg) scale(1.02); }
+.descarga-mini img { width: 100%; height: 100%; object-fit: cover; }
+.descarga-cuerpo { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.descarga-detalles { display: flex; flex-wrap: wrap; gap: 6px 14px; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--amber); }
+.descarga-titulo { font-family: var(--font-display); font-size: 1.4rem; line-height: 1.15; }
+.descarga-desc { color: var(--fog); font-size: 0.92rem; }
+.descarga .btn { margin-top: 6px; min-height: 42px; }
+
+/* Libros */
+.libros { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.libro {
+  display: grid; grid-template-columns: 104px minmax(0, 1fr);
+  border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2); overflow: hidden;
+}
+.libro-portada {
+  --libro: #3f4552;
+  position: relative; display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+  padding: 18px 8px;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.35) 0 6px, rgba(255, 255, 255, 0.06) 6px 8px, transparent 8px),
+    linear-gradient(160deg, color-mix(in srgb, var(--libro) 100%, #fff 8%), color-mix(in srgb, var(--libro) 80%, #000));
+  border-right: 1px solid var(--line);
+}
+.libro-siglas {
+  font-family: var(--font-display); font-size: 1.6rem; line-height: 1; color: #f0e2c4;
+  writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 0.04em;
+}
+.libro-anio { font-family: var(--font-mono); font-size: 0.72rem; color: rgba(240, 226, 196, 0.8); }
+.libro-gratis {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  padding: 2px 8px; border-radius: 999px; background: var(--amber); color: #1a1206;
+  font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase;
+}
+.libro-cuerpo { display: flex; flex-direction: column; gap: 8px; padding: 18px 20px 20px; min-width: 0; }
+.libro-titulo { font-family: var(--font-display); font-size: 1.3rem; line-height: 1.15; }
+.libro-original { margin-top: -4px; font-size: 0.85rem; font-style: italic; color: var(--fog-dim); }
+.libro-idiomas { display: flex; flex-wrap: wrap; gap: 6px; }
+.libro-desc { font-size: 0.9rem; color: var(--fog); }
+.libro-enlaces { margin-top: auto; padding-top: 6px; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.libro-enlace { display: inline-flex; align-items: center; gap: 6px; font-size: 0.875rem; font-weight: 500; color: var(--amber); }
+.libro-enlace .ico { width: 14px; height: 14px; }
+.libro-enlace:hover { color: var(--amber-hi); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Herramientas */
+#herramientas .filters { margin-bottom: 20px; }
+.herramientas { columns: 3 300px; column-gap: 16px; }
+.herr {
+  break-inside: avoid; margin-bottom: 16px;
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--ink-2);
+}
+.herr-cabeza { display: flex; align-items: center; gap: 12px; }
+.herr-icono {
+  display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 10px; overflow: hidden;
+  background: #f4efe6; color: var(--ink); font-family: var(--font-display); font-size: 1.2rem;
+}
+.herr-icono img { width: 28px; height: 28px; object-fit: contain; }
+.herr-nombre { font-family: var(--font-display); font-size: 1.2rem; line-height: 1.15; }
+.herr-cat { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--amber); }
+.herr-nota { font-size: 0.92rem; color: var(--paper); }
+.herr-preview {
+  display: block; border: 1px solid var(--line); border-left: 3px solid var(--fog-dim);
+  border-radius: var(--radius-sm); background: var(--stub); overflow: hidden;
+  transition: border-color 0.2s;
+}
+.herr-preview:hover { border-color: rgba(227, 167, 78, 0.5); border-left-color: var(--amber); }
+.herr-og { width: 100%; aspect-ratio: 1.91 / 1; object-fit: cover; border-bottom: 1px solid var(--line); }
+.herr-preview-texto { display: flex; flex-direction: column; gap: 4px; padding: 10px 12px 12px; }
+.herr-preview-titulo { font-size: 0.85rem; font-weight: 600; color: var(--paper); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.herr-preview-desc { font-size: 0.8rem; color: var(--fog); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.herr-dominio { display: inline-flex; align-items: center; gap: 6px; margin-top: 2px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--fog-dim); }
+.herr-dominio .ico { width: 12px; height: 12px; }
+
+@media (max-width: 900px) {
+  .descargas { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 720px) {
+  .descarga { grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding: 16px; }
+  .descarga-titulo { font-size: 1.2rem; }
+  .libros { grid-template-columns: minmax(0, 1fr); }
+  .libro { grid-template-columns: 76px minmax(0, 1fr); }
+  .libro-siglas { font-size: 1.3rem; }
+}

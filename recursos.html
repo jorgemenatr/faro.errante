@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mesas de la semana · Orden del Faro Errante</title>
-  <meta name="description" content="Las mesas de juego de esta semana en la Orden del Faro Errante: día, hora, Dungeon Master, ubicación y nivel.">
+  <title>Recursos · Orden del Faro Errante</title>
+  <meta name="description" content="Hoja de personaje editable, bitácora de aventura, libros de D&amp;D y herramientas que usa la Orden del Faro Errante.">
   <meta name="theme-color" content="#0b111c">
 
   <meta property="og:title" content="Orden del Faro Errante">
@@ -44,6 +44,11 @@
       <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
       <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
       <symbol id="i-mask" viewBox="0 0 24 24"><path d="M2 12a10 10 0 0 0 20 0V5l-3 1.5L16 4l-4 2-4-2-3 2.5L2 5z"/><path d="M8 11h.01"/><path d="M16 11h.01"/><path d="M9 16c1.8 1.3 4.2 1.3 6 0"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+      <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+      <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
     </defs>
   </svg>
 
@@ -67,10 +72,10 @@
 
       <nav class="main-nav" id="main-nav" aria-label="Principal" data-nav>
         <ul>
-          <li><a href="mesas.html" aria-current="page"><svg class="ico"><use href="#i-dice"/></svg>Mesas de juego</a></li>
+          <li><a href="mesas.html"><svg class="ico"><use href="#i-dice"/></svg>Mesas de juego</a></li>
           <li><a href="#"><svg class="ico"><use href="#i-user"/></svg>Mi personaje</a></li>
           <li><a href="gremio.html"><svg class="ico"><use href="#i-users"/></svg>Gremio</a></li>
-          <li><a href="recursos.html"><svg class="ico"><use href="#i-book"/></svg>Recursos</a></li>
+          <li><a href="recursos.html" aria-current="page"><svg class="ico"><use href="#i-book"/></svg>Recursos</a></li>
         </ul>
       </nav>
 
@@ -85,26 +90,51 @@
     </div>
   </header>
 
-  <main id="contenido" class="mesas-page">
+  <main id="contenido" class="recursos-page">
     <section class="container page-head">
-      <p class="kicker">Mesas de juego</p>
-      <h1>Mesas de esta semana</h1>
-      <p class="page-sub" data-week-label></p>
+      <p class="kicker">Recursos</p>
+      <h1>La biblioteca del gremio</h1>
+      <p class="page-lead">Todo lo que necesitas para preparar tu personaje, cerrar una aventura y dirigir tu propia mesa.</p>
+      <nav class="saltos" aria-label="Secciones de recursos">
+        <a href="#descargables">Descargables</a>
+        <a href="#libros">Libros de D&amp;D</a>
+        <a href="#herramientas">Herramientas</a>
+      </nav>
+    </section>
 
-      <div class="filter-bar">
-        <div class="filters" role="group" aria-label="Filtrar por nivel" data-filters>
-          <button type="button" class="filter" data-tier="todas" aria-pressed="true">Todas <span data-count="todas"></span></button>
-          <button type="button" class="filter" data-tier="T1" aria-pressed="false">T1 <span data-count="T1"></span></button>
-          <button type="button" class="filter" data-tier="T2" aria-pressed="false">T2 <span data-count="T2"></span></button>
-          <button type="button" class="filter" data-tier="T3" aria-pressed="false">T3 <span data-count="T3"></span></button>
-        </div>
-        <p class="tier-legend">T1: niveles 1–4 · T2: niveles 5–10 · T3: niveles 11–16</p>
+    <!-- Descargables -->
+    <section class="section gremio-section" id="descargables" aria-labelledby="descargables-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">Formatos del gremio</p>
+          <h2 id="descargables-title">Descargables</h2>
+        </header>
+        <ul class="descargas" data-descargas></ul>
       </div>
     </section>
 
-    <section class="container" aria-label="Mesas">
-      <div class="mesas" data-mesas></div>
-      <p class="mesas-empty" data-empty hidden>No hay mesas de este nivel esta semana.</p>
+    <!-- Libros -->
+    <section class="section gremio-section" id="libros" aria-labelledby="libros-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">Reglas de 5.5e</p>
+          <h2 id="libros-title">Libros de D&amp;D</h2>
+          <p class="section-sub">Los libros oficiales son de Wizards of the Coast. Aquí te decimos dónde conseguirlos y cuáles son gratuitos.</p>
+        </header>
+        <ul class="libros" data-libros></ul>
+      </div>
+    </section>
+
+    <!-- Herramientas -->
+    <section class="section gremio-section" id="herramientas" aria-labelledby="herramientas-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="kicker">Lo que usamos</p>
+          <h2 id="herramientas-title">Herramientas del gremio</h2>
+        </header>
+        <div class="filters" role="group" aria-label="Filtrar herramientas" data-filtros-herr></div>
+        <ul class="herramientas" data-herramientas></ul>
+      </div>
     </section>
   </main>
 
@@ -143,6 +173,7 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="mesas.js"></script>
+  <script src="herramientas-data.js"></script>
+  <script src="recursos.js"></script>
 </body>
 </html>
