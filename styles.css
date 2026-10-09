@@ -329,6 +329,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   background: var(--amber-soft); color: var(--amber);
 }
 .wm-icon .ico { width: 22px; height: 22px; }
+.wm-dots { display: none; }
 
 /* ---------- Pie ---------- */
 .site-footer { border-top: 1px solid var(--line); background: rgba(8, 12, 20, 0.7); }
@@ -410,7 +411,26 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .step-icon { position: absolute; left: 0; top: 0; }
   .step-num { margin-top: 0; }
 
-  .wm-points { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  /* En el cel, los puntos se vuelven un carrusel que se desliza de lado */
+  .wm { gap: 28px; }
+  .wm-lead { font-size: 1rem; }
+  .wm-note { font-size: 1rem; }
+  .wm-points {
+    display: flex; gap: 12px;
+    margin-inline: calc(var(--gutter) * -1);
+    padding: 0 var(--gutter) 4px;
+    overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .wm-points::-webkit-scrollbar { display: none; }
+  .wm-point {
+    flex: 0 0 80%; scroll-snap-align: start;
+    padding: 20px; border: 1px solid var(--line); border-radius: var(--radius);
+    background: var(--ink-2);
+  }
+  .wm-dots { display: flex; justify-content: center; gap: 8px; margin-top: -12px; }
+  .wm-dots span { width: 6px; height: 6px; border-radius: 999px; background: var(--line-strong); transition: width 0.25s var(--ease), background-color 0.25s; }
+  .wm-dots span.is-active { width: 18px; background: var(--amber); }
 
   .footer-inner { flex-direction: column; align-items: flex-start; }
   .footer-nav { gap: 8px 20px; }

@@ -43,4 +43,16 @@ if ('IntersectionObserver' in window) {
   });
 }
 
+// Puntitos del carrusel de West Marches (solo se ven en el cel)
+const wmPoints = document.querySelector('[data-wm-points]');
+const wmDots = document.querySelectorAll('[data-wm-dots] span');
+if (wmPoints && wmDots.length) {
+  wmPoints.addEventListener('scroll', () => {
+    const items = wmPoints.children;
+    const max = wmPoints.scrollWidth - wmPoints.clientWidth;
+    const i = max > 0 ? Math.round((wmPoints.scrollLeft / max) * (items.length - 1)) : 0;
+    wmDots.forEach((d, n) => d.classList.toggle('is-active', n === i));
+  }, { passive: true });
+}
+
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
