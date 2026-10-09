@@ -573,6 +573,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 /* Foto opcional */
 .mesa-media { margin: 0; position: relative; min-height: 100%; background: var(--ink-3); }
 .mesa-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.mesa-credito {
+  position: absolute; right: 8px; bottom: 8px; max-width: calc(100% - 16px);
+  padding: 2px 8px; border-radius: 4px;
+  background: rgba(11, 17, 28, 0.72);
+  font-family: var(--font-mono); font-size: 0.65rem; color: var(--fog);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 
 @media (max-width: 720px) {
   .mesa, .mesa.con-foto { grid-template-columns: minmax(0, 1fr); }

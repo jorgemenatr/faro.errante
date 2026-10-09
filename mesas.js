@@ -1,6 +1,7 @@
 // Mesas de la semana.
 // Para agregar una mesa, copia un bloque y cambia los datos.
 // `imagen` es opcional: si no hay imagen o no carga, la tarjeta se muestra sin foto.
+// `credito` es el autor y la licencia de la foto, cuando la licencia lo pide.
 const MESAS = [
   {
     fecha: '2026-10-09',
@@ -12,6 +13,7 @@ const MESAS = [
     ubicacion: 'Casa del Gremio · Mesa 1',
     nivel: 'T1',
     imagen: 'assets/img/mesas/puente.jpg',
+    credito: 'Foto: Nicole Hill · CC BY-SA 4.0',
   },
   {
     fecha: '2026-10-10',
@@ -22,6 +24,8 @@ const MESAS = [
     dm: 'Luis Ortega',
     ubicacion: 'Casa del Gremio · Mesa 2',
     nivel: 'T1',
+    imagen: 'assets/img/mesas/faro.jpg',
+    credito: 'Foto: Jorge Leal · CC BY 2.0',
   },
   {
     fecha: '2026-10-10',
@@ -33,6 +37,7 @@ const MESAS = [
     ubicacion: 'Casa del Gremio · Mesa 1',
     nivel: 'T2',
     imagen: 'assets/img/mesas/grieta.jpg',
+    credito: 'Foto: Philip Mitchell · CC BY-SA 3.0',
   },
   {
     fecha: '2026-10-11',
@@ -44,6 +49,7 @@ const MESAS = [
     ubicacion: 'Ludoteca del centro · Sala grande',
     nivel: 'T1',
     imagen: 'assets/img/mesas/rio.jpg',
+    credito: 'Foto: RightCowLeftCoast · CC BY-SA 4.0',
   },
   {
     fecha: '2026-10-13',
@@ -65,6 +71,7 @@ const MESAS = [
     ubicacion: 'Casa del Gremio · Mesa 1',
     nivel: 'T2',
     imagen: 'assets/img/mesas/niebla.jpg',
+    credito: 'Foto: Diacritica · CC BY-SA 3.0',
   },
 ];
 
@@ -160,6 +167,7 @@ function tarjeta(m) {
     });
     img.src = m.imagen;
     fig.append(img);
+    if (m.credito) fig.append(el('figcaption', 'mesa-credito', m.credito));
     card.classList.add('con-foto');
     card.append(fig);
   }
