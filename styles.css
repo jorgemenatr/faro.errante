@@ -177,8 +177,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     radial-gradient(ellipse 80% 70% at 70% 100%, #1b2a44, transparent 70%),
     linear-gradient(180deg, #0d1626, #0b111c);
 }
-.hero-media { position: absolute; inset: 0; z-index: -2; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 70% center; }
+.hero-media {
+  position: absolute; z-index: -2; top: 0; right: 0; bottom: 0; width: 58%;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
+}
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 85%; }
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
@@ -396,11 +400,17 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   :root { --header-h: 64px; }
   .brand-name { font-size: 0.95rem; }
 
-  .hero { min-height: auto; align-items: flex-end; }
-  .hero::before {
-    background: linear-gradient(0deg, rgba(11, 17, 28, 0.96) 0%, rgba(11, 17, 28, 0.75) 45%, rgba(11, 17, 28, 0.1) 100%);
+  /* En el cel la imagen va arriba, completa, y el texto debajo */
+  .hero { min-height: auto; display: block; background: var(--ink); }
+  .hero::before { display: none; }
+  .hero-media {
+    position: relative; z-index: 0; display: block; width: 100%;
+    height: min(62vh, 460px);
+    -webkit-mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 70%, transparent 100%);
   }
-  .hero-inner { padding-block: 220px 48px; }
+  .hero-media img { object-position: 68% 62%; }
+  .hero-inner { position: relative; margin-top: -24px; padding-block: 0 48px; }
   .hero-actions .btn { flex: 1 1 auto; }
 
   .cards { grid-template-columns: 1fr; gap: 16px; }
