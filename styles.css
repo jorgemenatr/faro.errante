@@ -177,12 +177,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
     radial-gradient(ellipse 80% 70% at 70% 100%, #1b2a44, transparent 70%),
     linear-gradient(180deg, #0d1626, #0b111c);
 }
-.hero-media {
-  position: absolute; z-index: -2; top: 0; right: 0; bottom: 0; width: 58%;
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
-  mask-image: linear-gradient(90deg, transparent 0%, #000 38%);
-}
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 85%; }
+.hero-media { position: absolute; inset: 0; z-index: -2; }
+.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 75% 60%; }
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:

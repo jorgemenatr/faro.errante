@@ -12,7 +12,8 @@ Coloca las imágenes en `assets/img/` con estos nombres. Mientras falte alguna, 
 
 | Archivo | Uso | Proporción |
 |---|---|---|
-| `hero.jpg` | Hero (en escritorio ocupa la mitad derecha; en el cel, todo el fondo) | 4:5 |
+| `hero.jpg` | Hero (escritorio) | 21:9 |
+| `hero-mobile.jpg` | Hero (celular, va arriba del texto) | 4:5 |
 | `card-mesas.jpg` | Tarjeta Mesas de juego | 3:2 |
 | `card-personaje.jpg` | Tarjeta Mi personaje | 3:2 |
 | `card-gremio.jpg` | Tarjeta Gremio | 3:2 |
